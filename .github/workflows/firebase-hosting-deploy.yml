@@ -16,7 +16,6 @@ jobs:
       checks: write
       contents: read
       pull-requests: write
-    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
 
     steps:
       - name: Set PR environment variables
