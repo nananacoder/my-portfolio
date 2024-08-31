@@ -1,45 +1,78 @@
-![Astro Nano](_astro_nano.png)
 
-Astro Nano is a static, minimalist, lightweight, lightning fast portfolio and blog theme.
+# My Portfolio 
 
-Built with Astro, Tailwind and Typescript, an no frameworks.
+### About the project
+This is a personal portfolio website for showing up work experience and projects for hire.
+It is based on a web framework called [Astro](https://astro.build/) and blog theme [Astro Nano](https://github.com/markhorn-dev/astro-nano), built with TypeScript.
 
-It was designed as an even more minimal theme than my popular theme [Astro Sphere](https://github.com/markhorn-dev/astro-sphere)
+### Directory Structure 
+```
+├── .eslintignore                      # List of files/folders ignored for ESLint                     |
+├── .eslintrc.json                     # Config file for ESLint                                       |
+├── .github                            # The github workflow used  
+├── .gitignore                         # List of intentionally untracked files to be ignored by Git   |
+├── .nvmrc                             # The nvm config for the node version used                     |
+├── firebaserc                         # Configuration details for Google Firebase                    |
+├── firebase.json                      # Project-specific settings for Firebase.                      |
+├── README.md                          # README file                                                  |
+├── public                             # Static content that will be served                           |
+├── src                                # Directory that contains all the frontend code                |
+    ├── ...
+├── node_modules                       # Installed node dependencies                                  |
+├── package-lock.json                  # Node dependencies lock file                                  |
+├── package.json                       # Node dependencies and npm commands                           |
+├── tsconfig.json                      # Config file for TypeScript                                   |
+```
 
-## 🚀 Deploy your own
+### Prerequisites
+- [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) - node.js version management
+- [firebase-tools](https://firebase.google.com/docs/cli) - firebase cli tool
 
-[![Deploy with Vercel](_deploy_vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/markhorn-dev/astro-nano)  [![Deploy with Netlify](_deploy_netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markhorn-dev/astro-nano)
+## Install , Build and Deployment
 
-## 📋 Features
+### Git review/repository
+https://github.com/nananacoder/my-portfolio
 
-- ✅ 100/100 Lighthouse performance
-- ✅ Responsive
-- ✅ Accessible
-- ✅ SEO-friendly
-- ✅ Typesafe
-- ✅ Minimal style
-- ✅ Light/Dark Theme
-- ✅ Animated UI
-- ✅ Tailwind styling
-- ✅ Auto generated sitemap
-- ✅ Auto generated RSS Feed
-- ✅ Markdown support
-- ✅ MDX Support (components in your markdown)
+### Setup
 
-## 💯 Lighthouse score
-![Astro Nano Lighthouse Score](_lighthouse.png)
+First install the project prerequisites(see above).
 
-## 🕊️ Lightweight
-No frameworks or added bulk
+Then
+```shell script
+git checkout develop
 
-## ⚡︎ Fast
-Rendered in ~40ms on localhost
+# install specified node version
+# (you may have to reload your terminal if you have just installed nvm)
+nvm install
 
-## 📄 Configuration
+# install node dependencies
+npm ci
 
-The blog posts on the demo serve as the documentation and configuration.
+# install the firebase cli
+npm install firebase-tools
 
-## 💻 Commands
+# Authenticate the Firebase CLI with your Google account. 
+npx firebase login
+
+```
+
+## Local development
+```shell script
+# build
+npm run build
+
+# start local dev server
+npm run dev
+```
+
+## Deploy to firebase hosting
+```
+npm run deploy
+```
+
+
+
+## 💻 Commands for Astro
 
 All commands are run from the root of the project, from a terminal:
 
@@ -58,7 +91,3 @@ Replace npm with your package manager of choice. `npm`, `pnpm`, `yarn`, `bun`, e
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 | `npm run lint`            | Run ESLint                                       |
 | `npm run lint:fix`        | Auto-fix ESLint issues                           |
-
-## 🏛️ License
-
-MIT
