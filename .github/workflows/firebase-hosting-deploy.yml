@@ -27,6 +27,10 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         run: |
           echo "HOSTING_DEPLOY_CHANNEL_ID=live" >> $GITHUB_ENV
+      - name: Set on-merge environment variables
+        if: ${{ github.event_name == 'develop' }}
+        run: |
+          echo "HOSTING_DEPLOY_CHANNEL_ID=dev" >> $GITHUB_ENV
       - uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v4
