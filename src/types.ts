@@ -15,3 +15,9 @@ export type Socials = {
   NAME: string;
   HREF: string;
 }[];
+
+export type AboutMe = {
+  TITLE: string;
+  SUBTITLE: string;
+  DESCRIPTION: string;
+}
