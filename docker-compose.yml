@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  my-app:
+    build: .
+    ports:
+      - "4321:4321"  # Local port:Container port
+    volumes:
+      - .:/app
