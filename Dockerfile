@@ -8,6 +8,12 @@ WORKDIR /app
 # Copy the application code
 COPY . .
 
+# install Node adapter
+RUN npm install @astrojs/node
+
+# Cope node adapter config file to our astro.config.* file
+COPY astro.config.docker.mjs astro.config.mjs
+
 # install all dependencies
 RUN npm install
 # build the application

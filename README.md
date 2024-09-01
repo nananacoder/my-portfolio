@@ -12,6 +12,8 @@ It is based on a web framework called [Astro](https://astro.build/) and blog the
 ├── .github                            # The github workflow used  
 ├── .gitignore                         # List of intentionally untracked files to be ignored by Git   |
 ├── .nvmrc                             # The nvm config for the node version used                     |
+├── Dockerfile                         # Docker file                                                  |
+├── .dockerignore                      # The files or folders be ignored in the Docker commands       |
 ├── firebaserc                         # Configuration details for Google Firebase                    |
 ├── firebase.json                      # Project-specific settings for Firebase.                      |
 ├── README.md                          # README file                                                  |
@@ -27,6 +29,7 @@ It is based on a web framework called [Astro](https://astro.build/) and blog the
 ### Prerequisites
 - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) - node.js version management
 - [firebase-tools](https://firebase.google.com/docs/cli) - firebase cli tool
+- [docker](https://docs.docker.com/) - docker 
 
 ## Install , Build and Deployment
 
@@ -64,6 +67,21 @@ npm run build
 # start local dev server
 npm run dev
 ```
+
+## Build locally using Docker
+```shell script
+# For you first build,
+# Use Docker Compose to build and start the containers 
+# defined in your docker-compose.yml file
+docker-compose up --build
+
+# For your subsequent runs, just start the containers without rebuilding the images
+docker-compose up
+
+# stop the containers
+docker-compose down
+```
+
 
 ## Deploy to firebase hosting
 ```
