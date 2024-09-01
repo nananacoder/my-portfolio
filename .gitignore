@@ -23,7 +23,7 @@ pnpm-debug.log*
 
 # IDE
 .idea/
-.vscode
+.vscode/
 
 # firebase
 .firebase
