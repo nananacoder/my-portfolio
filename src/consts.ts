@@ -34,14 +34,6 @@ export const PROJECTS: Metadata = {
 };
 
 export const SOCIALS: Socials = [
-  { 
-    NAME: "Telegram",
-    HREF: "https://t.me/freedomank",
-  },
-  { 
-    NAME: "Discord",
-    HREF: " https://discord.com/users/nanana7711"
-  },
   {
     NAME: "Linkedin",
     HREF: "https://www.linkedin.com/in/ankiyang",
@@ -50,36 +42,33 @@ export const SOCIALS: Socials = [
 
 export const ABOUTCONTENT: AboutMe = {
   TITLE: "About | Anki Yang", 
-  SUBTITLE: "Some information about myself",
+  SUBTITLE: "About myself",
   DESCRIPTION: `
   ![Side](/side.jpg)
 
   Hello, stranger! **My name is Anki**, 
-  and I was born in 1992 in China. 
-  After graduating with an engineering degree, 
+  and I was born in China. 
+  After graduating with an engineering degree from college, 
   I embarked on a journey into programming. 
   I love playing games since I was young and always 
-  very curious to know how softwares all worked under the hood. 
-  I started to **self-learning** about web development and launched 
-  my career in China. 
-  I chose **backend development** becase I am interested in knowing how the product works 
+  very curious to know how software all worked under the hood. 
+  I started to **self-learning** about web development and launched my career. 
+  I chose **backend development** because I am interested in knowing how the product works 
   behind the scenes, in a place where the user sees nothing and does not know how the information is processed, 
   how it is stored, etc.
   
-
-  In 2019, I moved to **New Zealand** to start a new adventure, completed a Master's degree in **Computer Science**. 
-  Over the graduate courses, I significantly expanded my knowldge and perspective in 
+  In 2019, I moved to **New Zealand**, completed a Master's degree in **Computer Science**. 
+  Over the graduate courses, I significantly expanded my knowledge and perspective in 
   software development. Since then, I have been working as a backend developer, continuously honing my skills.
 
-  During my 5 years in New Zealand, I have grown from a novice self-taught programmer into 
-  a confident **senior developer** with advanced skills, capable of handling complex challenges independently. 
-  This journey has not only shaped my technical abilities but also strengthened my confidence in my role.
+  Over the past five years in NZ, I've grown from a novice programmer into a senior developer capable of 
+  handling complex challenges independently. This journey has not only shaped my technical abilities 
+  but also strengthened my confidence in my role.
 
 
-  In my free time, I enjoy outdoor activities like **running** and hiking. 
-  I’m also a big music lover and am learning **English** and **Japanese** to better 
-  connect with others and express myself. 
-  I have a deep appreciation for nature and animals, and I love traveling with those 
+  When I'm not coding, I enjoy outdoor activities like running and hiking. 
+  I'm also a passionate music lover and language learner. 
+  My love for nature and animals drives my enjoyment of traveling with those 
   close to me. I’m also an avid reader, with a particular interest in novels, history books. 
   `, // Markdown is supported
 
