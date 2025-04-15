@@ -21,3 +21,5 @@ export type AboutMe = {
   SUBTITLE: string;
   DESCRIPTION: string;
 }
+
+export type BlogCategory = "tech" | "career";
