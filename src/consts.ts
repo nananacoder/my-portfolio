@@ -23,11 +23,23 @@ export const BLOG: Metadata = {
   DESCRIPTION: "Just Blog",
 };
 
+export const TECH_BLOG: Metadata = {
+  TITLE: "Tech Blog",
+  DESCRIPTION: "Technical articles, tutorials and insights",
+};
+
+export const CAREER_BLOG: Metadata = {
+  TITLE: "Career Growth",
+  DESCRIPTION: "Career development, soft skills, and professional growth insights",
+};
+
+// Kept for reference but not currently used
 export const WORK: Metadata = {
   TITLE: "Work",
   DESCRIPTION: "Where I have worked and what I have done.",
 };
 
+// Kept for reference but not currently used
 export const PROJECTS: Metadata = {
   TITLE: "Projects",
   DESCRIPTION: "A collection of my projects, with links to repositories and demos.",

@@ -2,6 +2,7 @@
 title: "Deploy Django to Google App Engine Standard"
 description: "Guide you through the process of deploying a Django app to Google App Engine"
 date: "Mar 1 2024"
+category: "tech"
 ---
 ## Setup
 

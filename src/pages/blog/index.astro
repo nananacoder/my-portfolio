@@ -1,28 +1,22 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { BLOG } from "@consts";
 
-const data = (await getCollection("blog"))
-  .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-  
-type Acc = {
-  [year: string]: CollectionEntry<"blog">[];
-}
+// Get tech blog posts
+const techPosts = (await getCollection("blog"))
+    .filter(post => !post.data.draft && post.data.category === "tech")
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .slice(0, 5); // Show only the 5 most recent
 
-const posts = data.reduce((acc: Acc, post) => {
-    const year = post.data.date.getFullYear().toString();
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(post);
-    return acc;
-  }, {});
-
-const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a)); 
+// Get career blog posts
+const careerPosts = (await getCollection("blog"))
+    .filter(post => !post.data.draft && post.data.category === "career")
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .slice(0, 5); // Show only the 5 most recent
 ---
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
@@ -31,26 +25,42 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
       <div class="animate font-semibold text-black dark:text-white">
         Blog
       </div>
-      <div class="space-y-4">
-        {years.map(year => (
-          <section class="animate space-y-4">
-            <div class="font-semibold text-black dark:text-white">
-              {year}
-            </div>
-            <div>
-              <ul class="flex flex-col gap-4">
-                {
-                  posts[year].map((post) => (
-                    <li>
-                      <ArrowCard entry={post}/>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          </section>
-        ))}
-      </div>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">
+            Tech Blog
+          </h5>
+          <Link href="/blog/tech">
+            See all tech posts
+          </Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {techPosts.map(post => (
+              <li>
+                <ArrowCard entry={post} />
+              </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">
+            Career Growth
+          </h5>
+          <Link href="/blog/career">
+            See all career posts
+          </Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {careerPosts.map(post => (
+              <li>
+                <ArrowCard entry={post} />
+              </li>
+          ))}
+        </ul>
+      </section>
     </div>
   </Container>
 </PageLayout>

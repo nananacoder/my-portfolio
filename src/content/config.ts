@@ -1,14 +1,18 @@
 import { defineCollection, z } from "astro:content";
+
+// Updated blog schema with category field
 const blog = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
-    draft: z.boolean().optional()
+    draft: z.boolean().optional(),
+    category: z.enum(["tech", "career"]).default("tech"),
   }),
 });
 
+// Keep this for future reference, but we won't be using it now
 const work = defineCollection({
   type: "content",
   schema: z.object({
@@ -19,6 +23,7 @@ const work = defineCollection({
   }),
 });
 
+// Keep this for future reference, but we won't be using it now
 const projects = defineCollection({
   type: "content",
   schema: z.object({
